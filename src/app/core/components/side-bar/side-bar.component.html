@@ -1,0 +1,20 @@
+<mat-drawer-container class="example-container" hasBackdrop="false">
+    <mat-drawer #drawer mode="side">
+      <mat-selection-list [multiple]="false">
+        <mat-list-option *ngFor="let nav of navList" [value]="nav">
+          {{nav}}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <h1 (click)="drawer.toggle()">Hello World</h1>
+      <a routerLink="/adminModule">Pg1</a>
+      <a routerLink="/empModule">Pg2</a>
+      <a routerLink="/empModule/dashboard">dashboard</a>
+      <a routerLink="/empModule/entry">entry</a>
+      
+      <div style="min-height: 400px;">
+      <router-outlet></router-outlet>
+    </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
